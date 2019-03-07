@@ -11,6 +11,8 @@ var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')
 
 var spinner = ora('building for production...')
+spinner.color = 'yellow'
+spinner.text = 'Precessing files'
 spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
@@ -29,6 +31,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     console.log(chalk.cyan('  Build complete.\n'))
     console.log(chalk.yellow(
       '  Tip: built files are meant to be served over an HTTP server.\n' +
+      '  Tip: If you have the http library execute command \'hs dist -p 9000\'.\n' +
       '  Opening index.html over file:// won\'t work.\n'
     ))
   })
