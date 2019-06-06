@@ -3,7 +3,7 @@ import { PersonService } from '../resource'
 const personModule = {
   namespaced: true,
   state: {
-    name: 'Douglas Lira - AVANADE'
+    name: 'Douglas Lira'
   },
   mutations: {
     SET_NAME (state, name) {

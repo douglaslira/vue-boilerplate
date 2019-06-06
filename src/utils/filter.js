@@ -6,11 +6,16 @@ Vue.filter('number', function (value) {
 
 Vue.filter('DateDMY', function (value) {
   if (value) {
-    var monthNames = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
-    var date = new Date(value)
-    var day = date.getDate()
-    var monthIndex = date.getMonth()
-    var year = date.getFullYear()
+    let monthNames = [
+      'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
+      'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    ]
+
+    let date = new Date(value)
+    let day = date.getDate()
+    let monthIndex = date.getMonth()
+    let year = date.getFullYear()
+
     return day + ' ' + monthNames[monthIndex] + ' ' + year
   } else {
     return '-'

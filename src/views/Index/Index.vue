@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h3>By {{ author }}</h3>
+    <h2>{{ message }}</h2>
+    <h3>By <router-link to="/about">{{ author }}</router-link></h3>
   </div>
 </template>
 
@@ -17,11 +18,13 @@ export default {
   },
   computed: {
     ...mapGetters({
+      message: 'Message/getMessage',
       author: 'Person/getName'
     })
   },
   methods: {
     ...mapActions({
+      setMessage: 'Message/setMessage',
       setName: 'Person/setName'
     })
   }

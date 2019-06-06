@@ -1,24 +1,28 @@
 import axios from 'axios'
 
 let axiosInstance = axios.create({
-  baseURL: 'localhost:10100/api',
+  baseURL: 'http://localhost:10010/api',
   timeout: 120000
 })
 
 axiosInstance.interceptors.request.use(function (config) {
+  // Do something before request is sent
   return config
 }, function (error) {
+  // Do something with request error
   return Promise.reject(error)
 })
 
+// Add a response interceptor
 axiosInstance.interceptors.response.use(function (response) {
+  // Do something with response data
   return response
 }, function (error) {
+  // Do something with response error
   return Promise.reject(error)
 })
 
 class HttpRequest {
-
   constructor () {
     this.axios = axios
   }

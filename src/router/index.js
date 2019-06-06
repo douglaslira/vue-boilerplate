@@ -9,6 +9,6 @@ export default new Router({
   routes: [
     { path: '/', name: 'index', component: IndexPage },
     { path: '/about', name: 'about', component: AboutPage },
-    { path: '*', redirect: '/' }
+    { path: '*', redirect: { name: 'index' } }
   ]
 })
