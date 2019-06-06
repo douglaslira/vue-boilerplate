@@ -1,30 +1,30 @@
 require('./check-versions')()
 
-var config = require('../config')
+let config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
-var opn = require('opn')
-var path = require('path')
-var express = require('express')
-var webpack = require('webpack')
-var proxyMiddleware = require('http-proxy-middleware')
-var webpackConfig = require('./webpack.dev.conf')
+let opn = require('opn')
+let path = require('path')
+let express = require('express')
+let webpack = require('webpack')
+let proxyMiddleware = require('http-proxy-middleware')
+let webpackConfig = require('./webpack.dev.conf')
 
-var port = process.env.PORT || config.dev.port
-var autoOpenBrowser = !!config.dev.autoOpenBrowser
-var proxyTable = config.dev.proxyTable
+let port = process.env.PORT || config.dev.port
+let autoOpenBrowser = !!config.dev.autoOpenBrowser
+let proxyTable = config.dev.proxyTable
 
-var app = express()
-var compiler = webpack(webpackConfig)
+let app = express()
+let compiler = webpack(webpackConfig)
 
-var devMiddleware = require('webpack-dev-middleware')(compiler, {
+let devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true
 })
 
-var hotMiddleware = require('webpack-hot-middleware')(compiler, {
+let hotMiddleware = require('webpack-hot-middleware')(compiler, {
   log: () => {}
 })
 
@@ -36,7 +36,7 @@ compiler.plugin('compilation', function (compilation) {
 })
 
 Object.keys(proxyTable).forEach(function (context) {
-  var options = proxyTable[context]
+  let options = proxyTable[context]
   if (typeof options === 'string') {
     options = { target: options }
   }
@@ -47,10 +47,10 @@ app.use(require('connect-history-api-fallback')())
 app.use(devMiddleware)
 app.use(hotMiddleware)
 
-var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
+let staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-var uri = 'http://localhost:' + port
+let uri = 'http://localhost:' + port
 
 devMiddleware.waitUntilValid(function () {
   console.log('> Listening at ' + uri + '\n')
