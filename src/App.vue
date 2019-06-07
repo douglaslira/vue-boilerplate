@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <i class="fab fa-accessible-icon"></i>
     <transition name="slide-fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -15,8 +16,7 @@ export default {
 
 <style lang="scss">
 
-  @import './assets/sass/var';
-  @import './assets/sass/bootstrap';
+  @import 'assets/sass/dashboard';
 
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
