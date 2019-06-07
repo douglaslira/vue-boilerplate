@@ -15,10 +15,10 @@ a {
   }
 }
 
-// Main page wrapper
-#wrapper {
+// Main page app
+#app {
   display: flex;
-  #content-wrapper {
+  #content-app {
     background-color: $gray-100;
     width: 100%;
     overflow-x: hidden;

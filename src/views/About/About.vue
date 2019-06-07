@@ -1,7 +1,7 @@
 <template>
   <div>
     <a href="javascript:void(0);" v-on:click="openModal()">About me</a>
-    <modal :showModal="showModal" :closeAction="closeDialog">
+    <modal v-bind:showModal="showModal" v-bind:closeAction="closeDialog">
       <h5 slot="header" class="modal-title">About</h5>
       <div slot="body">
         <p>Name: <strong>Douglas Lira</strong></p>
