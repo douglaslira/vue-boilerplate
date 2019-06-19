@@ -1,7 +1,7 @@
 {
   "name": "vue-boilerplate",
   "version": "1.0.0",
-  "description": "A boilerplate SPA including Vue, Vue-Router, Vuex, Axios",
+  "description": "A boilerplate SPA including Vue, Vue-Router, Vuex, Axioss",
   "author": "Douglas Lira <douglas.lira.web@gmail.com>",
   "private": false,
   "scripts": {
